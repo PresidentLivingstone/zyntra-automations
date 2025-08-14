@@ -1,0 +1,412 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* Updated to cosmic electric theme with deep navy background */
+  --background: oklch(0.12 0.08 270);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.15 0.06 270);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.15 0.06 270);
+  --popover-foreground: oklch(0.98 0 0);
+  /* Electric magenta as primary color */
+  --primary: oklch(0.65 0.35 330);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.25 0.08 270);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.22 0.06 270);
+  --muted-foreground: oklch(0.7 0.02 270);
+  /* Bright cyan accent color */
+  --accent: oklch(0.7 0.25 200);
+  --accent-foreground: oklch(0.12 0.08 270);
+  --destructive: oklch(0.6 0.3 15);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.3 0.08 270);
+  --input: oklch(0.2 0.06 270);
+  --ring: oklch(0.65 0.35 330);
+  /* Updated chart colors to match cosmic theme */
+  --chart-1: oklch(0.65 0.35 330);
+  --chart-2: oklch(0.7 0.25 200);
+  --chart-3: oklch(0.6 0.25 45);
+  --chart-4: oklch(0.6 0.3 15);
+  --chart-5: oklch(0.55 0.2 280);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.15 0.06 270);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.65 0.35 330);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.25 0.08 270);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.3 0.08 270);
+  --sidebar-ring: oklch(0.65 0.35 330);
+}
+
+.dark {
+  /* Dark theme uses same cosmic colors for consistency */
+  --background: oklch(0.08 0.08 270);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.12 0.06 270);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.12 0.06 270);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.7 0.35 330);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.2 0.08 270);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.18 0.06 270);
+  --muted-foreground: oklch(0.65 0.02 270);
+  --accent: oklch(0.75 0.25 200);
+  --accent-foreground: oklch(0.08 0.08 270);
+  --destructive: oklch(0.65 0.3 15);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.25 0.08 270);
+  --input: oklch(0.18 0.06 270);
+  --ring: oklch(0.7 0.35 330);
+  --chart-1: oklch(0.7 0.35 330);
+  --chart-2: oklch(0.75 0.25 200);
+  --chart-3: oklch(0.65 0.25 45);
+  --chart-4: oklch(0.65 0.3 15);
+  --chart-5: oklch(0.6 0.2 280);
+  --sidebar: oklch(0.12 0.06 270);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.7 0.35 330);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.2 0.08 270);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.25 0.08 270);
+  --sidebar-ring: oklch(0.7 0.35 330);
+}
+
+@theme inline {
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-space-grotesk);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "kern" 1, "liga" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+
+  p {
+    line-height: 1.7;
+  }
+}
+
+/* Added mobile-first responsive utilities and optimizations */
+@layer utilities {
+  /* Mobile-first responsive text sizing */
+  .text-responsive-xs {
+    @apply text-xs sm:text-sm;
+  }
+  .text-responsive-sm {
+    @apply text-sm sm:text-base;
+  }
+  .text-responsive-base {
+    @apply text-base sm:text-lg;
+  }
+  .text-responsive-lg {
+    @apply text-lg sm:text-xl;
+  }
+  .text-responsive-xl {
+    @apply text-xl sm:text-2xl;
+  }
+  .text-responsive-2xl {
+    @apply text-2xl sm:text-3xl;
+  }
+  .text-responsive-3xl {
+    @apply text-3xl sm:text-4xl;
+  }
+  .text-responsive-4xl {
+    @apply text-4xl sm:text-5xl;
+  }
+  .text-responsive-5xl {
+    @apply text-5xl sm:text-6xl;
+  }
+  .text-responsive-6xl {
+    @apply text-6xl sm:text-7xl;
+  }
+
+  /* Mobile-optimized spacing */
+  .px-mobile {
+    @apply px-4 sm:px-6 lg:px-8;
+  }
+  .py-mobile {
+    @apply py-8 sm:py-12 lg:py-16;
+  }
+  .py-section {
+    @apply py-16 sm:py-20 lg:py-32;
+  }
+  .gap-mobile {
+    @apply gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  /* Mobile-friendly containers */
+  .container-mobile {
+    @apply max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl 2xl:max-w-4xl mx-auto px-4 sm:px-6;
+  }
+  .container-wide {
+    @apply max-w-md sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6;
+  }
+
+  /* Removed problematic touch-target utility class that was causing CSS parsing errors */
+  .button-mobile {
+    @apply px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg;
+  }
+
+  /* Mobile-optimized cards */
+  .card-mobile {
+    @apply p-4 sm:p-6 lg:p-8 rounded-lg sm:rounded-xl;
+  }
+  .card-grid-mobile {
+    @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8;
+  }
+
+  /* Responsive grid patterns */
+  .grid-auto-fit-xs {
+    @apply grid grid-cols-[repeat(auto-fit,minmax(200px,1fr))];
+  }
+  .grid-auto-fit-sm {
+    @apply grid grid-cols-[repeat(auto-fit,minmax(250px,1fr))];
+  }
+  .grid-auto-fit-md {
+    @apply grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))];
+  }
+
+  /* Mobile navigation utilities */
+  .nav-mobile {
+    @apply fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md;
+  }
+  .nav-item-mobile {
+    @apply block py-3 px-4 text-lg font-medium;
+  }
+
+  /* Safe area utilities for mobile devices */
+  .safe-top {
+    padding-top: env(safe-area-inset-top);
+  }
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .safe-left {
+    padding-left: env(safe-area-inset-left);
+  }
+  .safe-right {
+    padding-right: env(safe-area-inset-right);
+  }
+}
+
+.text-gradient-neon {
+  background: linear-gradient(135deg, #ff1b8d, #00d4ff, #ff8c42);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-dark {
+  background: rgba(20, 15, 45, 0.8);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 27, 141, 0.2);
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+/* Enhanced mobile scroll behavior */
+@media (max-width: 768px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+
+/* Selection styles */
+::selection {
+  background-color: var(--primary);
+  color: var(--foreground);
+}
+
+/* Added cosmic brushstroke effect */
+.cosmic-brushstroke {
+  background: linear-gradient(45deg, #ff1b8d, #e94eff);
+  border-radius: 50px;
+  position: relative;
+  overflow: hidden;
+}
+
+.cosmic-brushstroke::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Added floating geometric elements */
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+/* Added mobile-specific optimizations */
+/* Prevent horizontal scroll on mobile */
+body {
+  overflow-x: hidden;
+}
+
+/* Optimize touch interactions */
+@media (hover: none) and (pointer: coarse) {
+  /* Remove hover effects on touch devices */
+  .hover\:scale-105:hover {
+    transform: none;
+  }
+
+  /* Enhance tap targets */
+  button,
+  a,
+  [role="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Mobile-first responsive breakpoints */
+@media (max-width: 640px) {
+  /* Reduce motion for better mobile performance */
+  .animate-bounce,
+  .animate-pulse,
+  .animate-spin {
+    animation-duration: 2s;
+  }
+
+  /* Optimize text rendering on mobile */
+  body {
+    text-rendering: optimizeSpeed;
+  }
+
+  /* Reduce blur effects on mobile for better performance */
+  .backdrop-blur-xl {
+    backdrop-filter: blur(8px);
+  }
+  .backdrop-blur-lg {
+    backdrop-filter: blur(6px);
+  }
+  .backdrop-blur-md {
+    backdrop-filter: blur(4px);
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  /* Restore full blur effects on tablets */
+  .backdrop-blur-xl {
+    backdrop-filter: blur(24px);
+  }
+  .backdrop-blur-lg {
+    backdrop-filter: blur(16px);
+  }
+  .backdrop-blur-md {
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Grid background pattern - mobile optimized */
+.bg-grid {
+  background-size: 20px 20px;
+  background-image: linear-gradient(to right, rgba(167, 43, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(167, 43, 255, 0.05) 1px, transparent 1px);
+}
+
+@media (min-width: 768px) {
+  .bg-grid {
+    background-size: 40px 40px;
+  }
+}
+
+/* Shadow utilities - mobile optimized */
+.shadow-glow {
+  box-shadow: 0 0 20px rgba(167, 43, 255, 0.5);
+}
+
+@media (max-width: 640px) {
+  .shadow-glow {
+    box-shadow: 0 0 10px rgba(167, 43, 255, 0.3);
+  }
+}
