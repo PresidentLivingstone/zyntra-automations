@@ -19,7 +19,7 @@ const spaceGrotesk = Space_Grotesk({
 })
 
 export const metadata: Metadata = {
-  title: "Zyntra Automations - The Future, On Autopilot",
+  title: "Zyntra-Automations",
   description:
     "Zimbabwean AI automation start-up helping local businesses transform through smart automation. Save time, cut costs, and scale faster with AI systems designed for real impact.",
   keywords: [
@@ -30,8 +30,7 @@ export const metadata: Metadata = {
     "African AI systems",
     "startup automation",
     "Zyntra Automations",
-  ],
-  generator: "v0.app",
+  ]
 }
 
 export const viewport: Viewport = {
@@ -49,6 +48,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
       <head>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
+        <link rel="icon" href="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Company%20Logo-RWdZxOon3xbVrfJVQidoJ1rwUZolma.png" sizes="any" />
         <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
       </head>
       <body className="font-sans antialiased bg-[#0B0316] text-white">
