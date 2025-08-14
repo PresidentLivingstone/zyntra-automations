@@ -234,8 +234,8 @@ export function Footer() {
             <ContactInfo
               icon={<Mail size={18} />}
               title="Email"
-              href="mailto:hello@zyntraautomations.com"
-              text="hello@zyntraautomations.com"
+              href="mailto:contact@zyntra.co.zw"
+              text="contact@zyntra.co.zw"
             />
             <ContactInfo icon={<Phone size={18} />} title="Phone" href="tel:+263771234567" text="+263 77 123 4567" />
             <ContactInfo icon={<MapPin size={18} />} title="Location" text="Harare, Zimbabwe" />
