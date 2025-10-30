@@ -39,10 +39,10 @@ export function Navigation() {
 
   const navItems = [
     { href: "#home", label: "Home" },
-    { href: "#services", label: "Services" },
-    { href: "#process", label: "Process" },
-    { href: "#testimonials", label: "Testimonials" },
-    { href: "#about", label: "About Us" },
+    { href: "#highlights", label: "Workshop" },
+    { href: "#bonuses", label: "Bonuses" },
+    { href: "#audience", label: "Who's It For" },
+    { href: "#contact", label: "Register" },
   ]
 
   // Hide/show navigation based on scroll direction
@@ -280,18 +280,11 @@ export function Navigation() {
                 className="flex items-center group"
                 onMouseEnter={() => playSound("hover")}
               >
-                <div className="mr-3 w-10 h-10 rounded-lg overflow-hidden relative flex items-center justify-center group-hover:shadow-glow transition-shadow duration-300">
-                  <img
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Company%20Logo-RWdZxOon3xbVrfJVQidoJ1rwUZolma.png"
-                    alt="Zyntra Automations Logo"
-                    className="w-full h-full object-contain filter brightness-0 invert group-hover:brightness-100 group-hover:invert-0 transition-all duration-300"
-                  />
-                </div>
                 <div className="flex flex-col leading-none">
-                  <span className="text-xl font-bold text-white group-hover:text-gradient-neon transition-all duration-300">
-                    Zyntra
+                  <span className="text-xl font-bold text-white group-hover:text-primary transition-all duration-300">
+                    Harness the Future
                   </span>
-                  <span className="text-xs text-muted-foreground">Automations</span>
+                  <span className="text-xs text-white/60">Zimbabwe 2025</span>
                 </div>
               </Link>
             </motion.div>
@@ -357,14 +350,19 @@ export function Navigation() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.4, delay: 0.5 }}
               >
-                <a href="#" onClick={handleCalendlyClick}>
+                <a
+                  href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault()
+                    document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                  }}
+                >
                   <Button
                     size="sm"
-                    className="group bg-gradient-to-r from-[#ff1b8d] via-[#a72bff] to-[#e94eff] hover:from-[#ff0d7a] hover:via-[#9c1fff] hover:to-[#e63bff] text-white px-6 py-5 font-semibold shadow-lg hover:shadow-[0_0_25px_rgba(255,27,141,0.6)] transition-all duration-500 border-0 relative overflow-hidden"
+                    className="group bg-gradient-cta hover:opacity-90 text-white px-6 py-5 font-semibold shadow-glow-primary transition-all duration-500 border-0 relative overflow-hidden"
                   >
                     <span className="flex items-center relative z-10">
-                      <Calendar className="w-4 h-4 mr-2 opacity-90 group-hover:opacity-100 transition-opacity" />
-                      <span>Let's Talk</span>
+                      <span>Register</span>
                       <motion.div className="ml-1 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300">
                         <ChevronRight size={16} />
                       </motion.div>
@@ -507,13 +505,19 @@ export function Navigation() {
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.3, duration: 0.4 }}
                 >
-                  <a href="#" onClick={handleCalendlyClick}>
+                  <a
+                    href="#contact"
+                    onClick={(e) => {
+                      e.preventDefault()
+                      document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                      setIsOpen(false)
+                    }}
+                  >
                     <Button
                       size="lg"
-                      className="bg-gradient-to-r from-[#ff1b8d] via-[#a72bff] to-[#e94eff] hover:from-[#ff0d7a] hover:via-[#9c1fff] hover:to-[#e63bff] text-white px-6 py-6 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full border-0 text-xl"
+                      className="bg-gradient-cta hover:opacity-90 text-white px-6 py-6 font-semibold shadow-lg hover:shadow-xl transition-all duration-300 w-full border-0 text-xl"
                     >
-                      <Calendar className="w-5 h-5 mr-2 opacity-90" />
-                      <span>Schedule a Call</span>
+                      <span>Register Now</span>
                     </Button>
                   </a>
 
@@ -588,7 +592,7 @@ export function Navigation() {
                   </div>
 
                   <div className="mt-8 pt-8 border-t border-white/10 text-center">
-                    <p className="text-white/30 text-sm">© 2025 Zyntra Automations</p>
+                    <p className="text-white/30 text-sm">© 2025 Harness the Future Zimbabwe</p>
                   </div>
                 </motion.div>
               </div>
